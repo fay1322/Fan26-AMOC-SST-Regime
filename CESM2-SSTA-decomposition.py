@@ -43,14 +43,9 @@ ens_idx['SF-AAER']=[]
 for j in range(20):
     ens_idx['SF-AAER'].append("{:0>3}".format(j+1))
     
-ens_idx['SF-xAER']=[]
-for j in range(10):
-    ens_idx['SF-xAER'].append("{:0>3}".format(j+1))
-
 nyear = {}
-nyear['LE'] = 
-131
-
+nyear['LE'] = 251
+nyear['SF-GHG'], nyear['SF-AAER'], nyear['SF-BMB'], nyear['SF-EE'] = 201
 
 ###### Defined Functions
 def anu(var):
@@ -135,9 +130,8 @@ def Decompose_SSTA(data):
 
 
 ######### Decomposition 
-
-spna_ssta = np.zeros((len(ens_idx[exp]),8,nyear)) # [irlzn,iterm,iyear]
-glb_ssta = np.zeros((len(ens_idx[exp]),8,nyear))
+spna_ssta = np.zeros((len(ens_idx[exp]), 8, nyear[exp])) # [irlzn,iterm,iyear]
+glb_ssta = np.zeros((len(ens_idx[exp]), 8, nyear[exp]))
 spna_ssta[:,:,:] = np.nan
 glb_ssta[:,:,:] = np.nan
 
@@ -147,6 +141,7 @@ for idx in ens_idx[exp]:
     data = read_data(exp,idx)
     spna_ssta[k,:,:],glb_ssta[k,:,:] = decompose_ssta(data)
     k=k+1
-    
+
+######### Save data in a txt file 
 np.savetxt(fdir_out+'CESM2-'+exp+'_decomposed_SPNASSTA_combined.txt', spna_ssta.flatten(), fmt='%7.5f')
 np.savetxt(fdir_out+'CESM2-'+exp+'_decomposed_GMSSTA_combined.txt', glb_ssta.flatten(), fmt='%7.5f')
