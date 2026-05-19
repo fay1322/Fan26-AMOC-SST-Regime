@@ -7,6 +7,6 @@ This repository contains:
 
 The instruction and expected output are included in the Jupyter Notebooks. 
 
-The code was developed and tested on NCAR/UCAR HPC JupyterHub using the NPL 2026a kernel. 
+The codes were developed and tested on NCAR/UCAR HPC JupyterHub using the NPL 2026a kernel. 
 
 Input data for the notebooks are not provided because the file size is too large and the origional data are publicly available.
