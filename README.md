@@ -1,6 +1,6 @@
-# Fan24-AMOC-SST-Regime
+# Fan26-AMOC-SST-Regime
+Code repository for: Fan et al. (2026), "Regime shifts of AMOC-sea surface temperature relationship", _Nature Communication_. 
 
-To be added: 
-- Datasets
-- Codes for plotting
-- Codes for SST change decomposition
+This repository contains:
+1) analysis scripts used to detect change points in the relationship between the Atlantic Meridional Overturning Circulation (AMOC) and North Atlantic sea surface temperature (SST) to to decomposte SST anomalies based on surface heat balance;
+2) scripts used to plot main figures. 
